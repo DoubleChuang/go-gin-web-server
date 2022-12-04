@@ -94,3 +94,7 @@ func streamRoom(c *gin.Context) {
 		return true
 	})
 }
+
+func GetIndex(c *gin.Context) {
+	c.HTML(http.StatusOK, "index.html", nil)
+}
