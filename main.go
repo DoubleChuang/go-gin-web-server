@@ -33,7 +33,7 @@ func StartGin() {
 
 	router := gin.New()
 	router.Use(rateLimit, gin.Recovery())
-	router.LoadHTMLGlob("resources/*.templ.html")
+	router.LoadHTMLGlob("resources/*.html")
 	router.Static("/static", "resources/static")
 	router.GET("/", GetIndex)
 	router.GET("/room/:roomid", roomGET)
@@ -44,6 +44,7 @@ func StartGin() {
 	if port == "" {
 		port = "8080"
 	}
+	fmt.Printf("Port %s\n", port)
 	if err := router.Run(":" + port); err != nil {
 		log.Panicf("error: %s", err)
 	}
