@@ -32,7 +32,7 @@ func StartGin() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "80"
+		port = "8080"
 	}
 	fmt.Printf("Port %s\n", port)
 	if err := router.Run(":" + port); err != nil {
