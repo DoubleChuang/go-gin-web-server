@@ -25,7 +25,8 @@ func ConfigRuntime() {
 func StartGin() {
 	gin.SetMode(gin.ReleaseMode)
 
-	router := gin.New()
+	// router := gin.New()
+	router := gin.Default()
 	router.LoadHTMLGlob("resources/*.html")
 	router.Static("/static", "resources/static")
 	router.GET("/", GetIndex)
